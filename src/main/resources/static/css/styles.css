@@ -1,3 +1,15 @@
 body {
     font-family: sans-serif;
 }
+
+a {
+    color: white;
+}
+nav {
+    background-color: darkblue;
+    color: white;
+}
+
+body {
+    background-color: cyan;
+}
