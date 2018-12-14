@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace ="fragments :: head"></head>
-<body>
+
+<body class="container body-contnet" >
+
     <h1 th:text="${title}">Default Title</h1>
 
     <nav th:replace = "fragments :: navigation"></nav>
 
     <p th:unless="${cheeses} and ${cheeses.size()}">no cheese :( </p>
 
-    <tr th:each="cheese : ${cheeses}">
-        <p >
-            <td th:text="${cheese.key} + '   -    '   ">Key</td>
-            <td th:text=" ${cheese.value}">Value</td>
-        </p>
-    </tr>
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
 
+        <tr th:each="cheese : ${cheeses}">
+            <td th:text="${cheese.name}"></td>
+            <td th:text=" ${cheese.description}"></td>
+        </tr>
+
+    </table>
 
 </body>
+
 </html>
