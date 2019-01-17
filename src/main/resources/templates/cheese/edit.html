@@ -6,12 +6,10 @@
 
 <nav th:replace = "fragments :: navigation"></nav>
 
-<h1>Edit cheese</h1>
-
 <p th:unless="${cheese}">no cheese :( </p>
 
-
-<form method="post" th:action="@{/edit/{cheeseId}}"  style="max-width:600px" >
+<h3 th:text="@{'Editing cheeseId: ' + ${cheese.cheeseId}} + ' cheese name: ' + ${cheese.name} "></h3>
+<form method="post" style="max-width:600px" >
     <div class="form-group" >
         <input type="hidden" th:value="${cheese.cheeseId}" name="cheeseId" />
         <label for="name-field">Name</label>
@@ -21,7 +19,7 @@
         <label for="desc-field">Description</label>
         <input class="form-control" type="text" id="desc-field" name="description" th:value="${cheese.description}" />
     </div>
-    
+
     <input type="submit" value="Edit Cheese" />
 </form>
 
