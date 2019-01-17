@@ -15,6 +15,16 @@ public class Cheese {
     @Size(min=1, message="The description cannot be empty")
     private String description;
 
+    private CheeseType type;
+
+    public CheeseType getType() {
+        return type;
+    }
+
+    public void setType(CheeseType type) {
+        this.type = type;
+    }
+
     private int cheeseId;
     private static  int nextId = 1;
 
