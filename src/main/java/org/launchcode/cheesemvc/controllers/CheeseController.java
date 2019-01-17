@@ -35,7 +35,7 @@ public class CheeseController {
         Cheese editCheese = CheeseData.getById(cheeseId);
         editCheese.setName(name);
         editCheese.setDescription(description);
-        return "redirect: cheese/index";
+        return "redirect:/cheese";
     }
 
     @RequestMapping(value ="add", method = RequestMethod.GET)
